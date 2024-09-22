@@ -1,0 +1,12 @@
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+dependencies {
+    implementation project(':model')
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.0.4'
+    implementation group: 'io.r2dbc', name: 'r2dbc-mssql', version: '1.0.2.RELEASE'
+}

@@ -1,0 +1,24 @@
+
+rootProject.name = 'computelematic'
+
+
+include ':app-service'
+project(':app-service').projectDir = file('./application/app-service')
+include ':model'
+project(':model').projectDir = file('./domain/model')
+include ':usecase'
+project(':usecase').projectDir = file('./domain/usecase')
+include ':utility'
+project(':utility').projectDir = file('./infrastructure/helpers/utility')
+include ':reactive-web'
+project(':reactive-web').projectDir = file('./infrastructure/entry-points/reactive-web')
+include ':rest-consumer'
+project(':rest-consumer').projectDir = file('./infrastructure/drivers-adapters/rest-consumer')
+include ':postgresql-db'
+project(':postgresql-db').projectDir = file('./infrastructure/drivers-adapters/postgresql-db')
+include ':utility'
+project(':utility').projectDir = file('./infrastructure/helpers/utility')
+include ':configuration'
+project(':configuration').projectDir = file('./infrastructure/configurations/configuration')
+
+
