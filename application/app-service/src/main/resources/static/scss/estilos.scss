@@ -1,0 +1,329 @@
+//Herramienta de diseño,dibujo de contornos
+/*
+.row > * {
+    border: 1px solid red;
+}
+*/
+///1.Patron de colores
+$principal: #29d;
+$secundario: #B5B4B4;
+$texto: #494949;
+
+
+///2.Modificacion de variables de bootstrap
+$primary: $principal; //Color principal 
+$secondary: $secundario; //Color secundario
+$font-family-base: 'Lato', sans-serif; //Tipo de letra general
+$body-color: $texto; //Color del texto general
+$font-size-root: 15px; //Tañado del texto general
+$enable-negative-margins: true;
+
+
+
+///Componente Navbar
+$navbar-toggler-padding-y: 0;
+$navbar-toggler-padding-x: 0;
+$navbar-toggler-focus-width: 0;
+$navbar-dark-color: #fff;
+$navbar-dark-hover-color: $principal;
+$navbar-dark-active-color: $principal;
+
+
+///Componente Buttons
+$btn-border-radius: .2rem;
+$btn-padding-y: .6rem;
+$btn-padding-x: .6rem;
+
+
+///Carga de funciones nativas de bootstrap
+@import "../libs/bootstrap/scss/functions";
+@import "../libs/bootstrap/scss/variables";
+@import "../libs/bootstrap/scss/utilities";
+
+
+///Api de utilidades personalizadas
+$utilities: (
+    "Orden de capas":(property: z-index,
+        responsive: false,
+        class: z-index,
+        values:(n2:-2,
+            n1:-1,
+            0:0,
+            1:1,
+            2:2,
+            3:3,
+            4:4,
+            5:5,
+        ),
+    )
+);
+
+
+@import "../libs/bootstrap/scss/bootstrap";
+
+
+//Asignacion de tamaño de letra general 
+//despues de contexto md 768px en adelante
+@include media-breakpoint-up(md) {
+    :root {
+        font-size: 16.5px;
+    }
+}
+
+
+///Estilos para encabezado 
+
+//Asignacion de fondo para seccion header
+.encabezado {
+    background: url("../images/secBgHeader/bgSpaceMobile.jpg") center center/cover fixed;
+
+    @include media-breakpoint-up(md) {
+        background: url("../images/secBgHeader/bgSpaceLg2.jpg") center center/cover fixed;
+    }
+}
+
+
+//Capa cover reutilizable >>> aplica una capa semitransparente a donde se integre
+.fondoCoverHeader {
+    position: relative;
+
+    &::before {
+        content: "";
+        background-color: $secundario;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: .2;
+    }
+
+    &>* {
+        position: relative;
+    }
+}
+
+//Creacion de transicion de color icono menu mobile
+.navbar-toggler i::before {
+    transition: all 0.5s ease;
+}
+
+//Transformacion de incono menu mobile cuando se expande
+.navbar-toggler[aria-expanded="true"] i::before {
+    content: "\f62a";
+    color: $principal;
+
+}
+
+
+//Fuentes de seccion Header
+.fontPersonalTitleHeader {
+    font-family: 'Audiowide', cursive;
+
+    @media only screen and (min-width: 200px) and (max-width: 320px) {
+        font-size: 23px;
+    }
+}
+
+.fontPersonalDescHeader {
+    font-family: 'Audiowide', cursive;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 25px;
+    }
+}
+
+
+//Personalizacion menu mobile
+//estilos desde (md)768px hacia abajo
+@include media-breakpoint-down(md) {
+    .navbar-nav {
+        background: $secundario;
+        border-radius: 0.3rem;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+        box-shadow: 0 1px rgba(0, 0, 0, 0.40);
+    }
+
+}
+
+
+//Estilos Seccion objetivos generales
+
+.tituloConLinea {
+    margin: 0;
+    padding: 0;
+
+    &::after {
+
+        content: "";
+        display: block;
+        width: 150px;
+        border-bottom: 3px solid;
+        margin: 1.3rem 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include media-breakpoint-up(md) {
+            width: 400px;
+            margin: 1.8rem 0;
+        }
+
+    }
+}
+
+
+.objetivosGeneralesItem {
+    transition: box-shadow .4s ease;
+}
+
+.objetivosGeneralesItem:hover {
+    box-shadow: $box-shadow;
+}
+
+
+
+//Estilos seccion boletin de ofertas
+
+.boletinOfertas {
+    background: url("../images/secOfert/imagenSeccionBoletinMobile.jpg") center center/cover fixed;
+
+    @include media-breakpoint-up(md) {
+        background: url("../images/secOfert/imagenSeccionBoletinLg2.jpg") center center/cover fixed;
+    }
+}
+
+.fondoCoverBoletin {
+    position: relative;
+
+    &::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: .5;
+    }
+
+    &>* {
+        position: relative;
+    }
+}
+
+//Estilos productos y servicios de empresa
+.itemProdSer {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        background: $secundario;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        transition: opacity .2s ease;
+    }
+
+    @include media-breakpoint-up(lg){
+        &:hover::before {
+            opacity: .8;
+        }
+    }
+    
+
+
+    h3 {
+        position: absolute;
+        bottom: -4rem;
+        margin-bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        transition: bottom .6s ease;
+    }
+
+    @include media-breakpoint-up(lg){
+        &:hover h3 {
+            bottom: 3rem;
+        }
+    }
+    
+
+}
+
+
+
+@include media-breakpoint-down(lg) {
+
+    .animateClass {
+
+        &::before{
+        content: "";
+        background: $secundario;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: .8;
+        transition: opacity 2s ease;
+        }
+        
+        h3 {
+            bottom: 3rem;
+            transition: bottom 1.5s ease;
+            max-width: 50%;
+            transform: translateX(50%);
+        }  
+    
+    }  
+}
+
+
+//Estilos Seccion footer
+
+.pieDePagina {
+    a {
+        color: $secundario;
+        text-decoration: none;
+    }
+
+    li {
+        color: $secundario;
+    }
+
+    .redesSociales {
+        a {
+            color: black;
+            background: $secundario;
+            width: 1.8rem;
+            height: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: .3rem;
+
+        }
+    }
+
+    .creditos {
+        border-top: 1px solid black;
+    }
+}
+
+
+//Estilos pagina ResponseSuscOfert
+
+.encabezadoPageSuscOfert {
+    background: url("../images/pageResponseSucOfert/thanksMobile.jpg") center center/cover fixed;
+
+    @include media-breakpoint-up(lg) {
+        background: url("../images/pageResponseSucOfert/thanks.jpg") center center/cover fixed;
+    }
+}

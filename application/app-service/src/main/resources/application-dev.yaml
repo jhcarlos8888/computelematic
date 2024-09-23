@@ -10,3 +10,10 @@ spring:
   config:
     activate:
       on-profile: "${SPRING_PROFILE_ACTIVE:dev}"
+
+database:
+  host: localhost
+  port: 5432
+  name: computelematic_db
+  username: cmt_admin_user
+  password: Cmt.2024.db
