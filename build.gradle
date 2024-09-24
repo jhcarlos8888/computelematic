@@ -1,18 +1,16 @@
-
-buildscript {
-	ext {
-
-		springBootVersion = '3.3.4'
-		springDependencyManagement = '1.1.6'
-		mapstructVersion = '1.5.5.Final'
-
-	}
-}
-
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.reactive'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
 }
 
 configurations {
@@ -21,101 +19,28 @@ configurations {
 	}
 }
 
-
-bootJar {
-	mainClass = 'com.reactive.ComputelematicApplication'
+repositories {
+	mavenCentral()
 }
 
-
-allprojects {
-	repositories {
-
-		mavenCentral()
-
-	}
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'io.projectreactor.netty:reactor-netty'
+	implementation 'io.r2dbc:r2dbc-postgresql:0.8.9.RELEASE'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'org.postgresql:r2dbc-postgresql'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-
-subprojects {
-	subproject ->
-
-		apply plugin: 'idea'
-		apply plugin: 'java'
-		apply plugin: 'jacoco'
-		apply plugin: 'io.spring.dependency-management'
-		apply plugin: 'org.springframework.boot'
-		sourceCompatibility = JavaVersion.VERSION_17
-
-		if (subproject != project(':app-service')) {
-			bootJar {
-				enabled = false
-			}
-			jar {
-				enabled = true
-			}
-		} else {
-			bootJar {
-				enabled = true
-			}
-			jar {
-				// To disable the *-plain.jar
-				enabled = false
-			}
-		}
-		dependencies {
-
-			dependencies {
-				implementation 'io.r2dbc:r2dbc-postgresql:0.8.9.RELEASE'
-				implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-				implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
-				implementation 'org.springframework.boot:spring-boot-starter-webflux'
-				implementation 'io.projectreactor.netty:reactor-netty'
-
-				developmentOnly 'org.springframework.boot:spring-boot-devtools'
-				annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-
-				compileOnly 'org.projectlombok:lombok'
-				annotationProcessor 'org.projectlombok:lombok'
-
-
-				implementation "org.mapstruct:mapstruct:${mapstructVersion}"
-				annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
-
-				testImplementation 'org.springframework.boot:spring-boot-starter-test'
-				testImplementation 'io.projectreactor:reactor-test'
-				testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
-				testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-				testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
-			}
-
-
-		}
-		dependencyManagement {
-			imports {
-				mavenBom "org.springframework.cloud:spring-cloud-dependencies:2022.0.4"
-			}
-		}
-
-
-		tasks.named('test',Test) {
-			useJUnitPlatform()
-		}
-
+tasks.named('test',Test) {
+	useJUnitPlatform()
 }
-
-
-tasks.register('explodedJar', Copy) {
-	with jar
-	into "${buildDir}/exploded"
-}
-
-
-tasks.withType(JavaCompile).configureEach {
-	options.compilerArgs = [
-			'-Amapstruct.suppressGeneratorTimestamp=true'
-	]
-}
-tasks.named('wrapper', Wrapper) {
-	gradleVersion = '8.10.1'
-}
-
