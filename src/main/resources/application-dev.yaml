@@ -19,8 +19,8 @@ spring:
     cache: false
     encoding: UTF-8
 database:
-  host: localhost
-  port: 5432
-  name: computelematic_db
-  username: cmt_admin_user
-  password: Cmt.2024.db
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  name: ${DB_NAME}
+  username: ${DB_USERNAME}
+  password: ${DB_PASSWORD}
