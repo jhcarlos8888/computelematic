@@ -17,8 +17,8 @@ public class ControllerHome {
 
     @Bean
     public RouterFunction<ServerResponse> routeHome() {
-        return route(RequestPredicates.GET("/"),
-                request -> ServerResponse.ok().render("example_page"));
+        return route(RequestPredicates.GET("/").or(RequestPredicates.GET("index")),
+                request -> ServerResponse.ok().render("index"));
     }
 
 
