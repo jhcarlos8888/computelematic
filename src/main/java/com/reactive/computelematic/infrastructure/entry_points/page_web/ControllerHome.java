@@ -17,10 +17,15 @@ public class ControllerHome {
 
     @Bean
     public RouterFunction<ServerResponse> routeHome() {
-        return route(RequestPredicates.GET("/").or(RequestPredicates.GET("index")),
+        return route(RequestPredicates.GET("/").or(RequestPredicates.GET("/index")).or(RequestPredicates.GET("/home")),
                 request -> ServerResponse.ok().render("index"));
     }
 
 
+    @Bean
+    public RouterFunction<ServerResponse> routeResponseSuscOfert() {
+        return route(RequestPredicates.GET("/responseSuscOfert"),
+                request -> ServerResponse.ok().render("pages/responseSuscOfert"));
+    }
 
 }
