@@ -12592,7 +12592,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 768px) {
   :root {
-    font-size: 16.4px;
+    font-size: 16.5px;
   }
 }
 .encabezado {
@@ -12792,6 +12792,20 @@ textarea.form-control-lg {
 @media (min-width: 992px) {
   .encabezadoPageSuscOfert {
     background: url("../images/pageResponseSucOfert/thanks.jpg") center center/cover fixed;
+  }
+}
+
+.dropMenuProducts {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+@media screen and (max-width: 430px) {
+  .dropMenuProducts {
+    list-style: none;
+    padding: 0;
+    display: block;
   }
 }
 

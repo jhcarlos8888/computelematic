@@ -34,90 +34,139 @@
 
 <body>
   <!--INICIO ENCABEZADO-->
-<header class="encabezado bg-dark vh-100 py-2 py-md-4 position-relative fondoCoverHeader">
-  <!--Inicio barra de navegacion-->
-  <nav class="navbar navbar-expand-md navbar-dark z-1">
-    <div class="container">
-      <a class="navbar-brand" href="#"><img th:src="@{/images/Logos/LogoComputelematic.png}" alt="Logo de empresa"
-                                            width="80" height="auto" /></a>
+  <header class="encabezado bg-dark vh-100 py-2 py-md-4 position-relative fondoCoverHeader">
+    <!--Inicio barra de navegacion-->
+    <nav class="navbar navbar-expand-md navbar-dark z-1">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img th:src="@{/images/Logos/LogoComputelematic.png}"
+                                              alt="Logo de empresa" width="80" height="auto"/></a>
 
-      <a href="#" class="inicioSesion ms-auto me-2 d-md-none border-0">
-        <i class="bi bi-person-fill display-4 text-white"></i>
-      </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-              aria-label="Toggle navigation">
-        <i class="bi bi-list display-2"></i>
-      </button>
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Computelematic</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Productos
-            </a>
-            <ul class="dropdown-menu" >
-              <li><a class="dropdown-item" href="#">Tecnología</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Insumos</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Servicios
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Soporte Técnico</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Programación</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Marketing</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Diseño</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-        </ul>
+        <a href="#" class="inicioSesion ms-auto me-2 d-md-none border-0">
+          <i class="bi bi-person-fill display-4 text-white"></i>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <i class="bi bi-list display-2"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#"  role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false">
+                Productos
+              </a>
+              <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                <div class="dropMenuProducts">
+                  <li><a class="dropdown-item" href="#">Computadores</a></li>
+                  <li><a class="dropdown-item" href="#">Impresoras</a></li>
+                  <li><a class="dropdown-item" href="#">Celulares</a></li>
+                </div>
+                <li>
+                  <hr class="dropdown-divider"/>
+                </li>
+                <div class="dropMenuProducts">
+                  <li><a class="dropdown-item" href="#">Tablets</a></li>
+                  <li><a class="dropdown-item" href="#">Videojuegos</a></li>
+                  <li><a class="dropdown-item" href="#">Accesorios de tecnologia</a></li>
+
+                </div>
+                <li>
+                  <hr class="dropdown-divider"/>
+                </li>
+                <div class="dropMenuProducts">
+
+                  <li><a class="dropdown-item" href="#">Sistemas punto de venta</a></li>
+                  <li><a class="dropdown-item" href="#">Insumos para impresoras</a></li>
+
+                </div>
+                <li>
+                  <hr class="dropdown-divider"/>
+                </li>
+
+                <div class="dropMenuProducts">
+
+                  <li><a class="dropdown-item" href="#">Camaras de vigilancia</a></li>
+                  <li><a class="dropdown-item" href="#">Seguridad y telecomunicaciones</a></li>
+
+                </div>
+
+                <li>
+                  <hr class="dropdown-divider"/>
+                </li>
+
+                <div class="dropMenuProducts">
+
+                  <li><a class="dropdown-item" href="#">Equipos, repuestos e insumos de sublimacion</a></li>
+
+                </div>
+
+
+              </ul>
+
+
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#"  role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false">
+                Servicios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Soporte Técnico</a></li>
+                <li>
+                  <hr class="dropdown-divider"/>
+                </li>
+                <li><a class="dropdown-item" href="#">Programación</a></li>
+                <li>
+                  <hr class="dropdown-divider"/>
+                </li>
+                <li><a class="dropdown-item" href="#">Marketing</a></li>
+                <li>
+                  <hr class="dropdown-divider"/>
+                </li>
+                <li><a class="dropdown-item" href="#">Diseño</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Computelematic</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+
+          </ul>
+        </div>
+        <a href="#" class="d-none d-md-block btn btn-outline-light">Iniciar
+          sesión</a>
       </div>
-      <a href="#" class="d-none d-md-block btn btn-outline-light">Iniciar sesión</a>
-    </div>
-  </nav>
-  <!--Final barra de navegacion-->
+    </nav>
+    <!--Final barra de navegacion-->
 
-  <section class="position-absolute top-50 start-50 translate-middle w-100">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10 text-center text-white">
-          <h2 class="display-4 fw-bold fontPersonalTitleHeader">
-            COMPUTELEMATIC
-          </h2>
-          <p class="my-4 fontPersonalDescHeader">
-            "Un Mejor Futuro en Diseño y Tecnología"
-          </p>
-          <div class="d-grid gap-2 d-sm-block">
-            <a href="#" class="btn btn-primary me-sm-2 text-white">Cotizar producto o servicio</a>
-            <a href="#ancProdServ" class="btn btn-outline-light">Más informacíón</a>
+    <section class="position-absolute top-50 start-50 translate-middle w-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 text-center text-white">
+            <h2 class="display-4 fw-bold fontPersonalTitleHeader">
+              COMPUTELEMATIC
+            </h2>
+            <p class="my-4 fontPersonalDescHeader">
+              "Un Mejor Futuro en Diseño y Tecnología"
+            </p>
+            <div class="d-grid gap-2 d-sm-block">
+              <a href="#" class="btn btn-primary me-sm-2 text-white">Cotizar producto o servicio</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</header>
+    </section>
+  </header>
+
   <!--FINAL ENCABEZADO-->
 
   <!--Inicio Objetivos generales Nuestro objetivo es materializar tus ideas y proyectos-->
@@ -197,7 +246,7 @@
         </div>
 
         <div class="col-12 col-md-8 col-xl-7">
-          <form action="https://formsubmit.co/info@computelematic.com" class="formBoletinOfertas" method="POST">
+          <form action="https://formsubmit.co/info@computelematic.net" class="formBoletinOfertas" method="POST">
             <div class="input-group mb-3">
               <input type="email" name="email" id="email" class="form-control"
                 placeholder="Ingresa tu correo electrónico..." aria-label="Ingresa tu correo electrónico..."
@@ -207,7 +256,7 @@
               <input type="hidden" name="_cc" value="jh.045@hotmail.com" />
               <input type="hidden" name="_autoresponse"
                 value="Gracias por suscribirte, pronto te enviaremos nuestras ofertas" />
-              <input type="hidden" name="_next" value="https://computelematic.com/pages/responseSuscOfert.html" />
+              <input type="hidden" name="_next" value="https://computelematic.net/pages/responseSuscOfert.html" />
               <button class="btn btn-primary px-2 py-2 px-lg-5 py-lg-3" type="submit" id="btnEnvioSuscripcion">
                 <i class="bi bi-send fs-1 d-lg-none"></i>
                 <span class="d-none d-lg-block">Suscribir</span>
@@ -234,99 +283,99 @@
     <div class="container-fluid p-0">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-0">
         <div id="computadores" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catComputadores.jpg" alt="Computadores" width="100%" height="auto" />
+          <img th:src="@{/images/secProdSerIndex/catComputadores.jpg}" alt="Computadores" width="100%" height="auto" />
           <a href="#">
             <h3>Computadores</h3>
           </a>
         </div>
         <div id="impresoras" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catImpresoras.jpg" alt="Impresoras" width="100%" height="auto" />
+          <img th:src="@{/images/secProdSerIndex/catImpresoras.jpg}" alt="Impresoras" width="100%" height="auto" />
           <a href="#">
             <h3>Impresoras</h3>
           </a>
         </div>
         <div id="celulares" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catCelulares.jpg" alt="Celulares" width="100%" height="auto" />
+          <img th:src="@{/images/secProdSerIndex/catCelulares.jpg}" alt="Celulares" width="100%" height="auto" />
           <a href="#">
             <h3>Celulares</h3>
           </a>
         </div>
         <div id="tablets" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catTablets.jpg" alt="Tablets" width="100%" height="auto" />
+          <img th:src="@{/images/secProdSerIndex/catTablets.jpg}" alt="Tablets" width="100%" height="auto" />
           <a href="#">
             <h3>Tablets</h3>
           </a>
         </div>
         <div id="videoJuegos" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catVideojuegos.jpg" alt="Videojuegos" width="100%" height="auto" />
+          <img th:src="@{/images/secProdSerIndex/catVideojuegos.jpg}" alt="Videojuegos" width="100%" height="auto" />
           <a href="#">
             <h3>Videojuegos</h3>
           </a>
         </div>
         <div id="sistemasDePuntoDeVenta" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catPuntosDeVenta.jpg" alt="Sistemas punto de venta" width="100%"
+          <img th:src="@{/images/secProdSerIndex/catPuntosDeVenta.jpg}" alt="Sistemas punto de venta" width="100%"
             height="auto" />
           <a href="#">
             <h3>Sistemas punto de venta</h3>
           </a>
         </div>
         <div id="camarasDeVigilancia" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catCamarasDeSeguridad.jpg" alt="Camaras de vigilancia" width="100%"
+          <img th:src="@{/images/secProdSerIndex/catCamarasDeSeguridad.jpg}" alt="Camaras de vigilancia" width="100%"
             height="auto" />
           <a href="#">
             <h3>Cámaras de vigilancia</h3>
           </a>
         </div>
         <div id="seguridadYTelecomunicaciones" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catTelecomunicaciones.jpg" alt="Seguridad y telecomunicaciones"
+          <img th:src="@{/images/secProdSerIndex/catTelecomunicaciones.jpg}" alt="Seguridad y telecomunicaciones"
             width="100%" height="auto" />
           <a href="#">
             <h3>Seguridad y telecomunicaciones</h3>
           </a>
         </div>
         <div id="accesoriosDeTecnologia" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catAccesoriosTecnologia.jpg" alt="Accesorios de tecnologia" width="100%"
+          <img th:src="@{/images/secProdSerIndex/catAccesoriosTecnologia.jpg}" alt="Accesorios de tecnologia" width="100%"
             height="auto" />
           <a href="#">
             <h3>Accesorios de tecnología</h3>
           </a>
         </div>
         <div id="insumosParaImpresoras" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catImsumosImpresoras.jpg" alt="Insumos para impresoras" width="100%"
+          <img th:src="@{/images/secProdSerIndex/catImsumosImpresoras.jpg}" alt="Insumos para impresoras" width="100%"
             height="auto" />
           <a href="#">
             <h3>Insumos para impresoras</h3>
           </a>
         </div>
         <div id="equiposDeSublimacion" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catEquiposDeSublimacion.jpg" alt="Equipos de sublimacion" width="100%"
+          <img th:src="@{/images/secProdSerIndex/catEquiposDeSublimacion.jpg}" alt="Equipos, repuestos e insumos de sublimacion" width="100%"
             height="auto" />
           <a href="#">
-            <h3>Equipos de sublimación</h3>
+            <h3>Equipos, repuestos e insumos de sublimación</h3>
           </a>
         </div>
         <div id="soporteTecnico" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catSoporteTecnico.jpg" alt="Soporte tecnico" width="100%"
+          <img th:src="@{/images/secProdSerIndex/catSoporteTecnico.jpg}" alt="Soporte tecnico" width="100%"
             height="auto" />
           <a href="#">
             <h3>Soporte técnico</h3>
           </a>
         </div>
         <div id="diseñoGrafico" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catDiseñoGrafico.jpg" alt="Diseño grafico" width="100%" height="auto" />
+          <img th:src="@{/images/secProdSerIndex/catDiseñoGrafico.jpg}" alt="Diseño grafico" width="100%" height="auto" />
           <a href="#">
             <h3>Diseño gráfico</h3>
           </a>
         </div>
         <div id="programacionDeSoftware" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catProgramacionDeSoftware.jpg" alt="Programación de software"
+          <img th:src="@{/images/secProdSerIndex/catProgramacionDeSoftware.jpg}" alt="Programación de software"
             width="100%" height="auto" />
           <a href="#">
             <h3>Programación de software</h3>
           </a>
         </div>
         <div id="marketing" class="col itemProdSer">
-          <img src="src/images/secProdSerIndex/catMarketingDigital.jpg" alt="Marketing" width="100%" height="auto" />
+          <img th:src="@{/images/secProdSerIndex/catMarketingDigital.jpg}" alt="Marketing" width="100%" height="auto" />
           <a href="#">
             <h3>Marketing</h3>
           </a>
@@ -341,29 +390,29 @@
     <div class="container">
       <div class="row text-center text-lg-start">
         <div class="col-12 col-sm-6 col-lg-3 mb-5 mb-lg-0">
-          <img src="src/images/Logos/LogoComputelematic.png" width="80" higth="auto" alt="Logo de empresa" />
+          <img th:src="@{/images/Logos/LogoComputelematic.png}" width="80" height="auto" alt="Logo de empresa" />
           <ul class="list-unstyled my-4 fw-bold d-grid gap-2">
             <li>
-              <a href="mailto:info@computelematic.com">info@computelematic.com</a>
+              <a href="mailto:info@computelematic.net">info@computelematic.net</a>
             </li>
             <li>
-              <a href="https://api.whatsapp.com/send/?phone=573237918824&text=¡Hola!, vengo del sitio web Computelematic, desearía me pueda brindar más información"
-                target="_blank">(+57)323 791 8824</a>
+              <a href="https://api.whatsapp.com/send/?phone=573008450406&text=¡Hola!, vengo del sitio web Computelematic, desearía me pueda brindar más información"
+                target="_blank">(+57)300 845 0406</a>
             </li>
             <li>
-              <a href="https://api.whatsapp.com/send/?phone=573104278515&text=¡Hola!, vengo del sitio web Computelematic, desearía me pueda brindar más información"
-                target="_blank">(+57)310 427 8515</a>
+              <a href="https://api.whatsapp.com/send/?phone=573008716604&text=¡Hola!, vengo del sitio web Computelematic, desearía me pueda brindar más información"
+                target="_blank">(+57)300 871 6604</a>
             </li>
           </ul>
           <ul class="redesSociales list-inline">
             <li class="list-inline-item">
-              <a href="https://www.facebook.com/COMPUTELEMATIC/" target="_blank"><i class="bi bi-facebook"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+              <a href="#" target="_blank"><i class="bi bi-map"></i></a>
             </li>
             <li class="list-inline-item">
               <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
             </li>
           </ul>
         </div>
@@ -395,8 +444,8 @@
           </ul>
         </div>
       </div>
-      <p class="creditos mt-lg-4 mb-0 py-4 text-center text-muted small">
-        Copyright 2023 computelematic.com. Todos los derechos reservados
+      <p class="creditos mt-lg-4 mb-0 py-4 text-center small">
+        Copyright 2024 computelematic.net. Todos los derechos reservados
       </p>
     </div>
   </footer>
