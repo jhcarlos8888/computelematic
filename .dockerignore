@@ -1,72 +1,84 @@
-# ============================
-# BUILD ARTIFACTS
-# ============================
-.build/
-.gradle/
-!gradle/wrapper/gradle-wrapper.jar
-build/
+# flyctl launch added from .gitignore
+**/HELP.md
+**/.gradle
+**/build
+!**/gradle/wrapper/gradle-wrapper.jar
+!**/**/src/main/**/build
+!**/**/src/test/**/build
 
-# ============================
-# IDE FILES
-# ============================
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
+### STS ###
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings
+**/.springBeans
+**/.sts4-cache
+**/bin
+!**/**/src/main/**/bin
+!**/**/src/test/**/bin
 
-# Eclipse / STS
-.project
-.settings/
-.classpath
-.sts4-cache/
+### IntelliJ IDEA ###
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+**/out
+!**/**/src/main/**/out
+!**/**/src/test/**/out
 
-# VS Code
-.vscode/
+### NetBeans ###
+nbproject/private
+nbbuild
+dist
+nbdist
+.nb-gradle
 
-# NetBeans
-nbproject/
-nbbuild/
-dist/
-nbdist/
+### VS Code ###
+**/.vscode
 
-# ============================
-# SYSTEM / OS FILES
-# ============================
-.DS_Store
-Thumbs.db
+# flyctl launch added from src/main/resources/static/libs/bootstrap/.gitignore
+# Ignore docs files
+src/main/resources/static/libs/bootstrap/_site
+# Hugo files
+src/main/resources/static/libs/bootstrap/resources
+src/main/resources/static/libs/bootstrap/.hugo_build.lock
 
-# ============================
-# LOGS & TEMP FILES
-# ============================
-*.log
-*.tmp
-*.swp
-*.swo
-*.bak
+# Numerous always-ignore extensions
+src/main/resources/static/libs/bootstrap/**/*.diff
+src/main/resources/static/libs/bootstrap/**/*.err
+src/main/resources/static/libs/bootstrap/**/*.log
+src/main/resources/static/libs/bootstrap/**/*.orig
+src/main/resources/static/libs/bootstrap/**/*.rej
+src/main/resources/static/libs/bootstrap/**/*.swo
+src/main/resources/static/libs/bootstrap/**/*.swp
+src/main/resources/static/libs/bootstrap/**/*.vi
+src/main/resources/static/libs/bootstrap/**/*.zip
+src/main/resources/static/libs/bootstrap/**/*~
 
-# ============================
-# NODE + FRONTEND FILES (Bootstrap, etc.)
-# ============================
-src/main/resources/static/libs/bootstrap/node_modules/
-src/main/resources/static/libs/bootstrap/_site/
-src/main/resources/static/libs/bootstrap/resources/
-src/main/resources/static/libs/bootstrap/js/coverage/
+# OS or Editor folders
+src/main/resources/static/libs/bootstrap/**/._*
+src/main/resources/static/libs/bootstrap/**/.cache
+src/main/resources/static/libs/bootstrap/**/.DS_Store
+src/main/resources/static/libs/bootstrap/**/.idea
+src/main/resources/static/libs/bootstrap/**/.project
+src/main/resources/static/libs/bootstrap/**/.settings
+src/main/resources/static/libs/bootstrap/**/.tmproj
+src/main/resources/static/libs/bootstrap/**/*.esproj
+src/main/resources/static/libs/bootstrap/**/*.sublime-project
+src/main/resources/static/libs/bootstrap/**/*.sublime-workspace
+src/main/resources/static/libs/bootstrap/**/nbproject
+src/main/resources/static/libs/bootstrap/**/Thumbs.db
+src/main/resources/static/libs/bootstrap/.vscode
+# Local Netlify folder
+src/main/resources/static/libs/bootstrap/**/.netlify
 
-# ============================
-# GIT
-# ============================
-.git/
-.gitignore
+# Komodo
+src/main/resources/static/libs/bootstrap/**/.komodotools
+src/main/resources/static/libs/bootstrap/**/*.komodoproject
 
-# ============================
-# MAVEN (por si existe)
-# ============================
-target/
-
-# ============================
-# ENV FILES
-# ============================
-*.env
-.env
-
+# Folders to ignore
+src/main/resources/static/libs/bootstrap/dist-sass
+src/main/resources/static/libs/bootstrap/js/coverage
+src/main/resources/static/libs/bootstrap/node_modules
+fly.toml
