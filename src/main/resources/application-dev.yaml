@@ -16,7 +16,7 @@ spring:
     enabled: true
     prefix: classpath:/templates/
     suffix: .html
-    mode: HTML5
+    mode: HTML
     cache: false
     encoding: UTF-8
 database:
